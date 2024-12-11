@@ -59,3 +59,11 @@ branch name needs to be in the format 'feature/branch-name' OR include JIRA's co
 ```
 REGEX='(feature|release|hotfix)/(JIRA-\d+/)?[a-z-]+'
 ```
+
+## Error Message
+
+Change or update the error message if custom regex is used. E.g
+
+```
+ERROR_MESSAGE="branch name needs to be in the format 'feature/JIRA-1234'"
+```

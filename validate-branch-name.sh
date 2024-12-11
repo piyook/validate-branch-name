@@ -2,9 +2,10 @@
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 REGEX='^(feat|fix|hotfix|release|chore)/.'
 STANDARD_BRANCHES='main|dev'
+ERROR_MESSAGE="rename to either a standard branch name ($STANDARD_BRANCHES) or use the format 'feat|fix|hotfix|release|chore/your-branch-name'"
 
 if ! [[ $BRANCH_NAME =~ ^($STANDARD_BRANCHES){1}$|$REGEX+$ ]]; then
-  echo "Error: INVALID BRANCH NAME '$BRANCH_NAME': rename using format 'feat|fix|hotfix|release|chore/your-branch-name'"
+  echo "Error: INVALID BRANCH NAME '$BRANCH_NAME': $ERROR_MESSAGE"
   exit 1
 fi
 echo "Validated branch: $BRANCH_NAME - all OK :)"
